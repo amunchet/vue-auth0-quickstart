@@ -40,9 +40,14 @@ def user_yes_no_query(question):
 
 if __name__ == "__main__":
 
-    # TODO: Check if we are in the right directory
+    if "frontend" not in os.listdir(".") and "setup.py" not in os.listdir("."):
+        raise Exception("Script called from the wrong directory.  Please change directories to the directory with setup.py in it.")
 
-    # TODO: Check if docker is installed
+    try:
+        subprocess.call("docker")
+    except:
+        raise Exception("Docker is not installed.  Please install before continuing.")
+
 
     clear = lambda: subprocess.call('cls||clear', shell=True)
     clear()
@@ -125,7 +130,10 @@ if __name__ == "__main__":
     inplace_change("docker-compose.yml.snippet", "XXVUEPORTXX", vue_port)
     inplace_change("docker-compose.yml.snippet", "XXVUEUIPORTXX", vue_port_ui)
 
+    rename = user_yes_no_query("Do you wish to rename the docker snippet to docker-compose.yml?")
 
+    if rename:
+        os.rename("docker-compose.yml.snippet", "docker-compose.yml")
 
     # ----------------------------------------------------------
     # Remove .git?
@@ -150,7 +158,8 @@ if __name__ == "__main__":
     # ----------------------------------------------------------
     # Start Docker
     # ----------------------------------------------------------
-    start_docker = user_yes_no_query("Start docker? [y/n]")
+    
+    start_docker = user_yes_no_query("Start docker? ")
     
     if start_docker:
         os.system("docker-compose up --build -d")
