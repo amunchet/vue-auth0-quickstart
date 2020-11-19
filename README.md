@@ -9,9 +9,10 @@ Make sure that Docker and python are installed on the base.  Docker-compose is c
 
 ## Installation
 0.  Clone this repository `git clone https://github.com/amunchet/vue-auth0-quickstart.git`
-1.  Run `setup.py` in the main folder.  
-2.  Follow the instructions.
-3.  Enjoy.
+1.  `cd vue-auth0-quickstart`
+2.  `./setup.py` (or `python setup.py`)
+3.  Follow the prompts.
+4.  Enjoy.
 
 The file `project_name/entrypoint.sh` is the Docker entrypoint.  Remove `npm update` or the Vue UI server here.
 
