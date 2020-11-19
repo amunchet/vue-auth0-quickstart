@@ -61,8 +61,7 @@ if __name__ == "__main__":
     project_name = input().strip()
 
     if not project_name.isalnum():
-        print("ERROR - Project name can only contain numbers or letters")
-        return -1
+        raise Exception("ERROR - Project name can only contain numbers or letters")
 
 
     file_list = [
@@ -151,7 +150,7 @@ if __name__ == "__main__":
     start_docker = user_yes_no_query("Start docker? [y/n]")
     
     if start_docker:
-    os.system("docker-compose up --build -d")
+        os.system("docker-compose up --build -d")
 
 
     print ("Project creation created!  Enjoy.")
