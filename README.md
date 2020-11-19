@@ -20,3 +20,9 @@ This is meant to be used as a starting point for a larger Vue project.  You will
 The two key files are `auth.js` and `authService.js` - they are they keys to intergation with Auth0.
 
 The file `project_name/entrypoint.sh` is the Docker entrypoint.  Remove `npm update` or the Vue UI server here.
+
+### Typical Next Steps
+Next steps in using the quickstart with the rest of your project could be something like this (assuming you cloned `vue-auth0-quickstart` into your larger project):
+1.  `cat docker-compose.yml >> ../docker-compose.yml`  # You will need to edit docker-compose.yml after this
+2.  `mv frontend ..`
+3.  `cd .. && rm -rf vue-auth0-quickstart`
