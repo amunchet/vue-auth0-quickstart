@@ -131,9 +131,10 @@ if __name__ == "__main__":
     # Remove .git?
     # ----------------------------------------------------------
     clear()
-    remove = user_yes_no_query("Do you wish to remove the .git directory? [y/n]")
+    remove = user_yes_no_query("Do you wish to remove the .git directory? ")
 
-    remove_confirm = user_yes_no_query("Are you sure? [y/n]")
+    if remove:
+        remove_confirm = user_yes_no_query("Are you sure? ")
 
 
     if remove and remove_confirm:
