@@ -73,9 +73,9 @@ if __name__ == "__main__":
 
     file_list = [
         "frontend/entrypoint.sh",
-        "frontend/mars/package-lock.json",
-        "frontend/mars/package.json",
-        "frontend/mars/README.md",
+        "frontend/project_name/package-lock.json",
+        "frontend/project_name/package.json",
+        "frontend/project_name/README.md",
         "docker-compose.yml.snippet"
     ]
 
@@ -90,7 +90,7 @@ if __name__ == "__main__":
     # ----------------------------------------------------------
 
     auth_config = {}
-    auth_config_file = "frontend/mars/src/auth_config.json"
+    auth_config_file = "frontend/project_name/src/auth_config.json"
     if os.path.exists(auth_config_file):
         print("Auth0 config JSON already found!")
     else:
@@ -113,7 +113,7 @@ if __name__ == "__main__":
     print("Please enter URL prefix (i.e. dist) - no leading slash needed")
     url_prefix = input().strip()
 
-    inplace_change("frontend/mars/vue.config.js", "XXURLPATHXX", "/" + url_prefix)
+    inplace_change("frontend/project_name/vue.config.js", "XXURLPATHXX", "/" + url_prefix)
 
     clear()
 
@@ -153,7 +153,7 @@ if __name__ == "__main__":
     # ----------------------------------------------------------
     # Last step is to rename the directory to the project project_name
     print("Final rename...")
-    os.rename("frontend/mars", "frontend/" + project_name)
+    os.rename("frontend/project_name/", "frontend/" + project_name)
 
     # ----------------------------------------------------------
     # Start Docker
