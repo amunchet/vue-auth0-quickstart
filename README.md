@@ -7,7 +7,8 @@ This quickstart template creates a basic Vue application with Auth0 already impl
 ## Requirements
 Make sure that Docker and python are installed on the base.  Docker-compose is created by default, but not required.
 
-## Usage
+## Installation
+0.  Clone this repository `git clone https://github.com/amunchet/vue-auth0-quickstart.git`
 1.  Run `setup.py` in the main folder.  
 2.  Follow the instructions.
 3.  Enjoy.
