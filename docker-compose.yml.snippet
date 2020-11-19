@@ -1,0 +1,15 @@
+version: "3.2"
+services:
+  devel:
+    environment:
+      COMPOSE_CONVERT_WINDOWS_PATHS: 1
+      CHOKIDAR_USEPOLLING: "true"
+
+    build: ./frontend
+    ports:
+      - "XXVUEPORTXX:8000"
+      - "XXVUEUIPORTXX:8080"
+    volumes:
+      - ./frontend:/src
+      - /src/XXPROJECTNAMEXX/node_modules
+  
