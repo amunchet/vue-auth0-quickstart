@@ -7,6 +7,7 @@ import os
 import subprocess
 import shutil
 import json
+import sys
 
 def inplace_change(filename, old_string, new_string):
     """
