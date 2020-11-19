@@ -163,6 +163,7 @@ if __name__ == "__main__":
     
     if start_docker:
         os.system("docker-compose up --build -d")
+        print("Please note that Vue will need some additional time to start up.  Attach to the docker logs to see the progress.")
 
 
     print ("Project creation created!  Enjoy.")
