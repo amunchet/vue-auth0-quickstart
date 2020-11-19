@@ -14,9 +14,9 @@ Make sure that Docker and python are installed on the base.  Docker-compose is c
 3.  Follow the prompts.
 4.  Enjoy.
 
-The file `project_name/entrypoint.sh` is the Docker entrypoint.  Remove `npm update` or the Vue UI server here.
-
 ## Usage
 This is meant to be used as a starting point for a larger Vue project.  You will likely change the docker configuration, endpoint, and packages.  
 
 The two key files are `auth.js` and `authService.js` - they are they keys to intergation with Auth0.
+
+The file `project_name/entrypoint.sh` is the Docker entrypoint.  Remove `npm update` or the Vue UI server here.
