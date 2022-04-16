@@ -2,7 +2,6 @@
 
 <template>
     <div>
-        <p>Loading...</p>
     </div>
 </template>
 
@@ -13,13 +12,14 @@ export default {
             //console.log(data);
             /* istanbul ignore next */
             this.$router.push('/')
+            window.location.href = window.location.href + "?callback=1&date=" + Date.now()
         },
     },
-    created() {
+    created: async function() {
         try {
-            this.$auth.handleAuthentication()
+            await this.$auth.handleAuthentication()
         } catch (e) {
-            this.$store.commit('updateError', e)
+            console.log(e)
         }
     },
     mounted() {},
