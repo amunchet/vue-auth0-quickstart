@@ -30,7 +30,32 @@ export default {
       this.$auth.logOut()
       this.$router.push("/callback")
     }
-  }
+  },
+  mounted: /* istanbul ignore next */ function(){
+    var auth = this.$auth;
+    if (window.location.href.indexOf("callback") == -1) {
+      Helper.apiCall("secure", "", auth)
+        .then(() => {
+        })
+        .catch((e) => {
+          var output = "" + e;
+          var page = window.location.href;
+          if (
+            output.indexOf("471") != -1 &&
+            (page == undefined || page.indexOf("callback") == -1)
+          ) {
+            this.$auth.logOut();
+            this.$auth.login();
+          } else {
+            this.$bvToast.toast("" + e, {
+              title: "Error",
+              variant: "danger",
+              solid: true,
+            });
+          }
+        });
+    }
+  },
 }
 </script>
 <style>
